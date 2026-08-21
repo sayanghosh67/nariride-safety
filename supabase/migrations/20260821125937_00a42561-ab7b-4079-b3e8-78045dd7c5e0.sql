@@ -1,0 +1,16 @@
+ALTER TABLE public.ride_matches
+  ADD COLUMN IF NOT EXISTS vehicle_class text NOT NULL DEFAULT 'auto',
+  ADD COLUMN IF NOT EXISTS payment_method text NOT NULL DEFAULT 'CASH',
+  ADD COLUMN IF NOT EXISTS payment_status text NOT NULL DEFAULT 'PENDING',
+  ADD COLUMN IF NOT EXISTS fare_final numeric NOT NULL DEFAULT 0,
+  ADD COLUMN IF NOT EXISTS tip numeric NOT NULL DEFAULT 0,
+  ADD COLUMN IF NOT EXISTS otp_verified_at timestamptz,
+  ADD COLUMN IF NOT EXISTS arrived_at timestamptz,
+  ADD COLUMN IF NOT EXISTS started_at timestamptz,
+  ADD COLUMN IF NOT EXISTS completed_at timestamptz,
+  ADD COLUMN IF NOT EXISTS cancel_reason text NOT NULL DEFAULT '',
+  ADD COLUMN IF NOT EXISTS cancelled_by text NOT NULL DEFAULT '',
+  ADD COLUMN IF NOT EXISTS passenger_rating integer,
+  ADD COLUMN IF NOT EXISTS passenger_feedback text NOT NULL DEFAULT '',
+  ADD COLUMN IF NOT EXISTS driver_rating integer,
+  ADD COLUMN IF NOT EXISTS driver_feedback text NOT NULL DEFAULT '';

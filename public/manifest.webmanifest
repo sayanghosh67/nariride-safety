@@ -1,0 +1,11 @@
+{
+  "name": "NariRide — AI-Powered Women's Safe Mobility",
+  "short_name": "NariRide",
+  "description": "Every ride. Every route. Every woman, safe.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#141a2a",
+  "theme_color": "#141a2a",
+  "icons": [{ "src": "/favicon.ico", "sizes": "48x48", "type": "image/x-icon" }]
+}
