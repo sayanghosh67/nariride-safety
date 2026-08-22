@@ -1,61 +1,102 @@
-# 🛡️ NariRide Safety
+<div align="center">
+  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3" alt="NariRide Safety Banner" style="width: 100%; border-radius: 12px; margin-bottom: 20px;" />
 
-![NariRide Safety Banner](https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3)
+  <h1>🛡️ NariRide Safety</h1>
+  <p><strong>Empowering safe, reliable, and secure rides for women everywhere.</strong></p>
 
-> Empowering safe, reliable, and secure rides for women. 
+  <p>
+    <a href="https://github.com/yourusername/nariride-safety/issues"><img src="https://img.shields.io/github/issues/yourusername/nariride-safety?style=for-the-badge&color=purple" alt="Issues" /></a>
+    <a href="https://github.com/yourusername/nariride-safety/network/members"><img src="https://img.shields.io/github/forks/yourusername/nariride-safety?style=for-the-badge&color=pink" alt="Forks" /></a>
+    <a href="https://github.com/yourusername/nariride-safety/stargazers"><img src="https://img.shields.io/github/stars/yourusername/nariride-safety?style=for-the-badge&color=magenta" alt="Stars" /></a>
+    <a href="https://github.com/yourusername/nariride-safety/blob/main/LICENSE"><img src="https://img.shields.io/github/license/yourusername/nariride-safety?style=for-the-badge&color=blue" alt="License" /></a>
+  </p>
+</div>
 
-NariRide Safety is a modern, feature-rich web and mobile application dedicated to providing a secure transportation experience. Built with cutting-edge technologies, the platform integrates real-time mapping, robust authentication, and responsive design to ensure safety and convenience at every step of the journey.
+---
 
-## ✨ Key Features
+## 🌟 The Vision
 
-- **🗺️ Real-time Tracking & Maps**: Integrated with Leaflet for accurate, real-time location mapping and routing.
-- **🔐 Secure Authentication**: Powered by Supabase and Lovable Cloud Auth for secure, seamless user login and data protection.
-- **📱 Cross-Platform Ready**: Built with Capacitor, ensuring a native-like experience on Android and iOS devices.
-- **🎨 Modern UI/UX**: Designed with Tailwind CSS, Radix UI, and Framer Motion for a stunning, accessible, and highly responsive user interface.
-- **⚡ Blazing Fast**: Leveraging TanStack Start, React 19, and Vite for optimal performance and rapid loading times.
+In a world where safety during travel remains a prominent concern, **NariRide Safety** steps in as the ultimate mobility solution designed with women's security at its core. More than just a ride-sharing app, NariRide is a holistic ecosystem that integrates real-time geospatial tracking, instant SOS alerts, verified driver networks, and a community-driven safety protocol. 
 
-## 🛠️ Technology Stack
+Built specifically for high-stakes environments, NariRide ensures that every journey is monitored, safe, and transparent.
 
-| Category | Technologies |
-| --- | --- |
-| **Frameworks** | React 19, TanStack Start |
-| **Styling** | Tailwind CSS, Radix UI, Lucide React |
-| **Mapping** | Leaflet |
-| **Backend & Auth**| Supabase, Lovable Cloud Auth |
-| **Mobile Build** | Capacitor (Android/iOS) |
-| **Tooling** | Vite, TypeScript, ESLint, Prettier |
+---
+
+## ✨ Hackathon-Winning Features
+
+*   **🗺️ Live Precision Tracking:** Integrated with Leaflet for hyper-accurate, real-time location mapping, route deviation alerts, and live-sharing with emergency contacts.
+*   **🚨 Instant SOS System:** One-tap emergency triggers that instantly notify local authorities and registered emergency contacts with exact GPS coordinates.
+*   **🔐 Bulletproof Authentication:** Powered by Supabase, featuring multi-factor authentication (MFA) and biometric login for both riders and drivers.
+*   **🤖 Smart Driver Verification:** Background checks and continuous identity verification using AI to ensure the person behind the wheel is authorized.
+*   **📱 Native Cross-Platform Experience:** Built with Capacitor, delivering a seamless, lightning-fast native app experience on both Android and iOS from a single codebase.
+*   **🎨 Stunning UI/UX:** Crafted with Tailwind CSS, Radix UI, and Framer Motion, offering an intuitive, accessible, and visually captivating interface in both light and dark modes.
+*   **⚡ Blazing Fast Architecture:** Leveraging TanStack Start, React 19, and Vite for optimal performance, rapid loading times, and offline capabilities.
+
+---
+
+## 🛠️ Cutting-Edge Tech Stack
+
+Our application is built on the shoulders of modern, scalable technologies to ensure high availability and responsiveness.
+
+| Layer | Technologies Used |
+| :--- | :--- |
+| **Frontend Framework** | React 19, TanStack Start |
+| **Styling & Animation**| Tailwind CSS, Radix UI, Framer Motion, Lucide React |
+| **Mapping & Geospatial**| Leaflet, React-Leaflet |
+| **Backend & Database** | Supabase (PostgreSQL), Edge Functions |
+| **Mobile Compilation** | Capacitor (Android & iOS native builds) |
+| **Build & Tooling** | Vite, TypeScript, ESLint, Prettier |
+
+---
 
 ## 🚀 Getting Started
 
+Follow these steps to run NariRide Safety locally for development and testing.
+
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)
-- npm or bun
+*   [Node.js](https://nodejs.org/) (v18 or higher recommended)
+*   [npm](https://www.npmjs.com/) or [bun](https://bun.sh/)
+*   Android Studio (for Android mobile development)
 
-### Installation
+### 1. Clone & Install
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/nariride-safety.git
-   cd nariride-safety
-   ```
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/nariride-safety.git
+cd nariride-safety
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+# Install all dependencies
+npm install
+# or if using bun: bun install
+```
 
-3. **Run the development server:**
-   ```bash
-   npm run dev
-   ```
+### 2. Environment Variables
 
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
+Create a `.env` file in the root directory and add your Supabase and Map API credentials:
 
-### Mobile Development (Android)
+```env
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### 3. Run the Web App
+
+```bash
+# Start the development server
+npm run dev
+```
+
+Visit `http://localhost:5173` to view the application in your browser.
+
+### 4. Build for Production
+
+```bash
+# Create an optimized production build
+npm run build
+```
+
+### 5. Mobile Development (Android)
 
 To run the app on an Android device or emulator using Capacitor:
 
@@ -65,9 +106,11 @@ npx cap sync android
 npx cap open android
 ```
 
+---
+
 ## 🤝 Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+We welcome contributions from the open-source community! Together, we can make mobility safer for everyone.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -75,9 +118,18 @@ Contributions are what make the open source community such an amazing place to l
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+---
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+## 🏆 Hackathon Journey
+
+**NariRide Safety** was conceptualized and built to tackle the critical issue of women's safety during transit. Our focus on **Real-time processing**, **User-centric design**, and **Scalable architecture** makes it a robust solution ready for the real world.
 
 ---
-*Built with ❤️ and [Lovable](https://lovable.dev).*
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+<div align="center">
+  <p>Built with ❤️ for a safer tomorrow.</p>
+</div>
