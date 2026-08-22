@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3" alt="NariRide Safety Banner" style="width: 100%; border-radius: 12px; margin-bottom: 20px;" />
+  <img src="./public/favicon.png" alt="NariRide Safety Logo" width="150" style="margin-bottom: 20px;" />
 
   <h1>🛡️ NariRide Safety</h1>
   <p><strong>Empowering safe, reliable, and secure rides for women everywhere.</strong></p>
