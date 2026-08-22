@@ -32,6 +32,7 @@ jobs:
       - name: Build web application
         run: |
           npm run build
+          touch .output/public/index.html
           mkdir -p android/app/src/main/assets
 
       - name: Sync Capacitor Android
