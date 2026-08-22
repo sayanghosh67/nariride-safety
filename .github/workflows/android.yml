@@ -40,20 +40,32 @@ jobs:
           const files = fs.readdirSync(dir);
           const js = files.find(f => f.startsWith('index-') && f.endsWith('.js'));
           const css = files.find(f => f.startsWith('styles-') && f.endsWith('.css'));
-          const html = \`<!DOCTYPE html>
-          <html lang=\"en\" class=\"dark\">
-          <head>
-            <meta charset=\"utf-8\">
-            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover\">
-            <title>NariRide</title>
-            \${css ? '<link rel=\"stylesheet\" href=\"/assets/' + css + '\">' : ''}
-          </head>
-          <body>
-            <script type=\"module\" src=\"/assets/\${js}\"></script>
-          </body>
-          </html>\`;
+          const leafletCss = files.find(f => f.startsWith('map-view') && f.endsWith('.css'));
+          // Use relative paths (./assets/) NOT absolute (/assets/) so the app
+          // works under capacitor:// and file:// protocols without a web server.
+          const html = '<!DOCTYPE html>\n' +
+            '<html lang=\"en\" class=\"dark\">\n' +
+            '<head>\n' +
+            '  <meta charset=\"utf-8\">\n' +
+            '  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover\">\n' +
+            '  <meta name=\"theme-color\" content=\"#141a2a\">\n' +
+            '  <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n' +
+            '  <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black-translucent\">\n' +
+            '  <title>NariRide</title>\n' +
+            '  <link rel=\"icon\" href=\"./favicon.png\" type=\"image/png\">\n' +
+            (css ? '  <link rel=\"stylesheet\" href=\"./assets/' + css + '\">\n' : '') +
+            (leafletCss ? '  <link rel=\"stylesheet\" href=\"./assets/' + leafletCss + '\">\n' : '') +
+            '  <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n' +
+            '  <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n' +
+            '  <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap\">\n' +
+            '</head>\n' +
+            '<body>\n' +
+            '  <div id=\"app\"></div>\n' +
+            '  <script type=\"module\" src=\"./assets/' + js + '\"></script>\n' +
+            '</body>\n' +
+            '</html>';
           fs.writeFileSync('.output/public/index.html', html);
-          console.log('Created index.html with JS: ' + js);
+          console.log('Created index.html with JS: ' + js + ', CSS: ' + css);
           "
           mkdir -p android/app/src/main/assets
 
