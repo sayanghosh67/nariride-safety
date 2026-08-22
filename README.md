@@ -5,10 +5,15 @@
   <p><strong>Empowering safe, reliable, and secure rides for women everywhere.</strong></p>
 
   <p>
-    <a href="https://github.com/yourusername/nariride-safety/issues"><img src="https://img.shields.io/github/issues/yourusername/nariride-safety?style=for-the-badge&color=purple" alt="Issues" /></a>
-    <a href="https://github.com/yourusername/nariride-safety/network/members"><img src="https://img.shields.io/github/forks/yourusername/nariride-safety?style=for-the-badge&color=pink" alt="Forks" /></a>
-    <a href="https://github.com/yourusername/nariride-safety/stargazers"><img src="https://img.shields.io/github/stars/yourusername/nariride-safety?style=for-the-badge&color=magenta" alt="Stars" /></a>
-    <a href="https://github.com/yourusername/nariride-safety/blob/main/LICENSE"><img src="https://img.shields.io/github/license/yourusername/nariride-safety?style=for-the-badge&color=blue" alt="License" /></a>
+    <a href="https://github.com/sayanghosh67/nariride-safety/raw/main/NariRide-Safety.apk"><img src="https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android" alt="Download APK" /></a>
+    <a href="https://github.com/sayanghosh67/nariride-safety"><img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" alt="GitHub Repository" /></a>
+  </p>
+
+  <p>
+    <a href="https://github.com/sayanghosh67/nariride-safety/issues"><img src="https://img.shields.io/github/issues/sayanghosh67/nariride-safety?style=for-the-badge&color=purple" alt="Issues" /></a>
+    <a href="https://github.com/sayanghosh67/nariride-safety/network/members"><img src="https://img.shields.io/github/forks/sayanghosh67/nariride-safety?style=for-the-badge&color=pink" alt="Forks" /></a>
+    <a href="https://github.com/sayanghosh67/nariride-safety/stargazers"><img src="https://img.shields.io/github/stars/sayanghosh67/nariride-safety?style=for-the-badge&color=magenta" alt="Stars" /></a>
+    <a href="https://github.com/sayanghosh67/nariride-safety/blob/main/LICENSE"><img src="https://img.shields.io/github/license/sayanghosh67/nariride-safety?style=for-the-badge&color=blue" alt="License" /></a>
   </p>
 </div>
 
@@ -109,7 +114,7 @@ Follow these steps to run NariRide Safety locally for development and testing.
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/nariride-safety.git
+git clone https://github.com/sayanghosh67/nariride-safety.git
 cd nariride-safety
 
 # Install all dependencies
