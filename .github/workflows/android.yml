@@ -10,6 +10,8 @@ on:
 jobs:
   build-android:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -32,7 +34,27 @@ jobs:
       - name: Build web application
         run: |
           npm run build
-          touch .output/public/index.html
+          node -e "
+          const fs = require('fs');
+          const dir = '.output/public/assets';
+          const files = fs.readdirSync(dir);
+          const js = files.find(f => f.startsWith('index-') && f.endsWith('.js'));
+          const css = files.find(f => f.startsWith('styles-') && f.endsWith('.css'));
+          const html = \`<!DOCTYPE html>
+          <html lang=\"en\" class=\"dark\">
+          <head>
+            <meta charset=\"utf-8\">
+            <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover\">
+            <title>NariRide</title>
+            \${css ? '<link rel=\"stylesheet\" href=\"/assets/' + css + '\">' : ''}
+          </head>
+          <body>
+            <script type=\"module\" src=\"/assets/\${js}\"></script>
+          </body>
+          </html>\`;
+          fs.writeFileSync('.output/public/index.html', html);
+          console.log('Created index.html with JS: ' + js);
+          "
           mkdir -p android/app/src/main/assets
 
       - name: Sync Capacitor Android
@@ -42,8 +64,19 @@ jobs:
         working-directory: ./android
         run: ./gradlew assembleDebug
 
-      - name: Upload APK
+      - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-debug.apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Create Release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: android/app/build/outputs/apk/debug/app-debug.apk
+          tag_name: "v1.0.${{ github.run_number }}"
+          name: "Release v1.0.${{ github.run_number }}"
+          draft: false
+          prerelease: false
+          generate_release_notes: true
