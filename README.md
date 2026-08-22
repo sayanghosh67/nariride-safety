@@ -182,5 +182,6 @@ We welcome contributions from the open-source community! Together, we can make m
 Distributed under the MIT License. See `LICENSE` for more information.
 
 <div align="center">
-  <p>Built with ❤️ for a safer tomorrow.</p>
+  <p>Built with ❤️ by team MYTHOS for a safer tomorrow.</p>
+  <p>© Sayan Ghosh </p>
 </div>
