@@ -49,6 +49,52 @@ Our application is built on the shoulders of modern, scalable technologies to en
 
 ---
 
+## 🏗️ System Architecture
+
+Our robust architecture ensures real-time reliability, seamless scalability, and top-tier security for all our users.
+
+```mermaid
+graph TD
+    %% Define Styles
+    classDef client fill:#f9f9fb,stroke:#4f46e5,stroke-width:2px,color:#1f2937,rx:8px
+    classDef backend fill:#fef2f2,stroke:#ef4444,stroke-width:2px,color:#1f2937,rx:8px
+    classDef auth fill:#fdf4ff,stroke:#d946ef,stroke-width:2px,color:#1f2937,rx:8px
+    classDef db fill:#ecfdf5,stroke:#10b981,stroke-width:2px,color:#1f2937,rx:8px
+
+    %% Client App
+    subgraph Client App
+        UI[React 19 + Tailwind UI]:::client
+        Map[Leaflet Live Tracking]:::client
+        Mobile[Capacitor Native Shell]:::client
+    end
+
+    %% Security & Auth
+    subgraph Auth & Security
+        Auth[Supabase / Lovable Auth]:::auth
+        SOS[Instant SOS Trigger]:::auth
+    end
+
+    %% Backend & Data
+    subgraph Core Backend
+        Edge[Edge Functions API]:::backend
+        AI[AI Driver Verification]:::backend
+        DB[(PostgreSQL Database)]:::db
+    end
+
+    %% Flow
+    UI -->|Renders Map| Map
+    UI -.->|Wrapped by| Mobile
+    UI -->|Authenticates| Auth
+    Map -->|Triggers Alert| SOS
+    SOS -->|Webhooks / Alerts| Edge
+    Auth -->|Validates| DB
+    UI -->|Fetches Data| Edge
+    Edge <--> DB
+    Edge -->|Validates Drivers| AI
+```
+
+---
+
 ## 🚀 Getting Started
 
 Follow these steps to run NariRide Safety locally for development and testing.
